@@ -8,14 +8,25 @@
 </head>
 
 <body>
-    <form action="/form_submit" method="get">
-        Логин: <input type="text" name="log" /><br />
-        Пароль: <input type="password" name="pass" /><br />
-        Пол: <input type="radio" name="gender" value="m" checked />м
-        <input type="radio" name="gender" value="f" />ж<br />
-        E-mail: <input type="text" name="email" /><br />
-        <input type="submit" value="Отправить" />
-    </form>
+    <div style="margin-left: 40%;">
+        <table border="1px">
+            <tr>
+                <th>
+                    <form action="/form_submit" method="get">
+                        <div style="text-align: right;">
+                            Логин: <input type="text" required name="log" /><br />
+                            Пароль: <input type="password" required name="pass" /><br />
+                            E-mail: <input type="text" required name="email" /><br />
+                        </div>
+                        Пол: <input type="radio" name="gender" value="m" checked />м
+                        <input type="radio" name="gender" value="f" />ж<br />
+                        <input type="submit" value="Отправить" />
+                    </form>
+                </th>
+            </tr>
+        </table>
+    </div>
+
 </body>
 
 </html>
