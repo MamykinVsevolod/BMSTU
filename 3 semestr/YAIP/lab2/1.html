@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Часть 1</title>
+    <style>
+        em.extraordinary {
+            color: hotpink;
+            font-family: 'Franklin Gothic Medium';
+            font-size: x-large;
+        }
+
+        a.extraordinary {
+            text-transform: uppercase;
+            color: darkblue;
+            font-style: italic;
+        }
+
+        mark.extraordinary {
+            background: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <strong>Теорема Пифагора</strong>, определение: в прямоугольном треугольнике квадрат длины гипотенузы равен
+        сумме квадратов длин
+        катетов.
+        <br />
+        <em class="extraordinary">Гипотенуза</em> — сторона, лежащая напротив прямого угла.
+        <br />
+        <em>Катет</em> — одна из двух сторон, образующих прямой угол.
+        <br />
+        Формула Теоремы Пифагора выглядит так:
+        <var>a<sup>2</sup></var>+<var>b<sup>2</sup></var>
+        =<var>c<sup>2</sup></var>
+        , <br />
+        где a, b — катеты, с — гипотенуза.
+    </p>
+    Для треугольника со сторонами a, b и c, где c — большая сторона, действуют следующие правила:
+    <ul type=”disk”>
+        <li>если <var>c<sup>2</sup></var>
+            &lt; <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var>, значит угол, противолежащий стороне <var>c</var>,
+            является <mark class="extraordinary">острым</mark>
+        </li>
+        <li>если <var>c<sup>2</sup></var> = <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var>, значит угол,
+            противолежащий стороне <var>c</var>, является <mark>прямым</mark> </li>
+        <li>если <var>c<sup>2</sup></var> &gt; <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var>, значит угол,
+            , значит угол, противолежащий стороне <var>c</var>, является <mark class="extraordinary">тупым</mark> </li>
+    </ul>
+    <p> <strong>Доказательство</strong> теоремы Пифагора вы можете посмотреть на <a class="extraordinary"
+            href="https://skysmart.ru/articles/mathematic/teorema-pifagora-formula">сайте</a> </p>
+    <p>Рассмотрим проверку равенства теоремы пифагора в языке С++:</p>
+    <code>
+        #include &lt;bits/stdc++.h&gt;<br/>
+        int main ()<br/>
+        {<br/>
+        int a = 3, b = 4, c = 5;<br/>
+        if (a*a + b*b = c*c) cout &lt;&lt; "Прямоугольный треугольник"; <br/>
+        else cout &lt;&lt; "Не прямоугольный треугольник"; <br/>
+        return 0;<br/>
+        }
+    </code>
+</body>
+
+</html>
