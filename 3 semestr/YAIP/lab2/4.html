@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Часть 4 </title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <!-- <style></style> -->
+    <style>
+        .my-primary {
+            background-color: cadetblue;
+            color: white;
+        }
+
+        .fortext {
+            text-align: center;
+        }
+
+        .withwidth {
+            width: 350px;
+        }
+
+        main {
+            margin-top: 15px;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        em.extraordinary {
+            color: hotpink;
+            font-family: 'Franklin Gothic Medium';
+            font-size: x-large;
+        }
+
+        a.extraordinary {
+            text-transform: uppercase;
+            color: darkblue;
+            font-style: italic;
+        }
+
+        mark.extraordinary {
+            background-color: aqua;
+        }
+
+        code {
+            background-color: lightgoldenrodyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header></header> -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark my-primary">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <!-- <main></main> -->
+    <main class="container" role="main">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Ваш E-mail: </label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Ваш пароль: </label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Войти</button>
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table class="table table-bordered fortext">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">ЧС</th>
+                            <th scope="col">ЗН</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">8:30 <br /> 10:05 </th>
+                            <td class="withwidth"><em>(сем)</em> Языки интернет-программирования <em>619л</em>
+                                <em>Маняшев Э. Р.</em>
+                            </td>
+                            <td class="withwidth"><em>(сем)</em> Физика <em>619л</em></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10:15 <br /> 11:50</th>
+                            <td colspan="2" class="withwidth"><em>(лек)</em> Языки интернет-программирования
+                                <em>619л</em> <em>Маняшев Э.
+                                    Р.</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 12:00 <br /> 13:35</th>
+                            <td class="withwidth"></td>
+                            <td class="withwidth"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 13:50 <br /> 15:25</th>
+                            <td class="withwidth"></td>
+                            <td class="withwidth"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 15:40 <br /> 17:15</th>
+                            <td class="withwidth"></td>
+                            <td class="withwidth"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 17:25 <br /> 19:00</th>
+                            <td class="withwidth"></td>
+                            <td class="withwidth"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"> 19:10 <br /> 20:45</th>
+                            <td class="withwidth"></td>
+                            <td class="withwidth"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <p>
+                    <strong>Теорема Пифагора</strong>, определение: в прямоугольном треугольнике квадрат длины
+                    гипотенузы равен
+                    сумме квадратов длин
+                    катетов.
+                    <br />
+                    <em class="extraordinary">Гипотенуза</em> — сторона, лежащая напротив прямого угла.
+                    <br />
+                    <em>Катет</em> — одна из двух сторон, образующих прямой угол.
+                    <br />
+                    Формула Теоремы Пифагора выглядит так:
+                    <var>a<sup>2</sup></var>+<var>b<sup>2</sup></var>
+                    =<var>c<sup>2</sup></var>
+                    , <br />
+                    где a, b — катеты, с — гипотенуза.
+                </p>
+                Для треугольника со сторонами a, b и c, где c — большая сторона, действуют следующие правила:
+                <ul type=”disk”>
+                    <li>если <var>c<sup>2</sup></var>
+                        &lt; <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var>, значит угол, противолежащий стороне
+                        <var>c</var>,
+                        является <mark class="extraordinary">острым</mark>
+                    </li>
+                    <li>если <var>c<sup>2</sup></var> = <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var>, значит
+                        угол,
+                        противолежащий стороне <var>c</var>, является <mark>прямым</mark> </li>
+                    <li>если <var>c<sup>2</sup></var> &gt; <var>a<sup>2</sup></var> + <var>b<sup>2</sup></var>, значит
+                        угол,
+                        , значит угол, противолежащий стороне <var>c</var>, является <mark
+                            class="extraordinary">тупым</mark> </li>
+                </ul>
+                <p> <strong>Доказательство</strong> теоремы Пифагора вы можете посмотреть на <a class="extraordinary"
+                        href="https://skysmart.ru/articles/mathematic/teorema-pifagora-formula">сайте</a> </p>
+                <p>Рассмотрим проверку равенства теоремы пифагора в языке С++:</p>
+                <code>
+                    #include &lt;bits/stdc++.h&gt;<br/>
+                    int main ()<br/>
+                    {<br/>
+                    int a = 3, b = 4, c = 5;<br/>
+                    if (a*a + b*b = c*c) cout &lt;&lt; "Прямоугольный треугольник"; <br/>
+                    else cout &lt;&lt; "Не прямоугольный треугольник"; <br/>
+                    return 0;<br/>
+                    }
+                </code>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </main>
+    <!-- <footer></footer> -->
+    <footer class="my-primary">
+        <div class="container">
+            <p class="footer-text">Footer</p>
+        </div>
+    </footer>
+</body>
+
+</html>
