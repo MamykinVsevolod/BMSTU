@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-weight: 700;
+            background-color: yellow;
+        }
+
+        form div {
+            margin: 12px;
+        }
+
+        form button {
+            margin-top: 10px;
+            font-weight: 700;
+            padding: 10px 20px;
+            font-size: large;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="#" method="#" id="form">
+        <div>
+            <label>
+                Имя:
+                <input type="text" name="name" value="Иван Петров">
+            </label>
+        </div>
+        <div>
+            <label>
+                Возраст:
+                <input type="number" name="age" value="30">
+            </label>
+        </div>
+        <div>
+            <label>
+                Я согласен с правилами:
+                <input type="checkbox" name="terms" checked>
+            </label>
+        </div>
+        <div>
+            Тарифный план:
+            <select name="plan">
+                <option value="free" selected>Бесплатный</option>
+                <option value="simple">Простой</option>
+                <option value="pro">Профессиональный</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+    <script>
+        function getFormValue(event) {
+            event.preventDefault();
+            const name = form.querySelector('[name="name"]'), //получаем поле name
+                age = form.querySelector('[name="age"]'), //получаем поле age
+                terms = form.querySelector('[name="terms"]'), //получаем поле terms
+                plan = form.querySelector('[name="plan"]'); //получаем поле plan
+            const data = {
+                name: name.value,
+                age: age.value,
+                plan: plan.value,
+                terms: terms.checked
+            };
+            console.log(data);
+        }
+        const form = document.getElementById('form');
+        form.addEventListener('submit', getFormValue);
+    </script>
+</body>
+
+</html>

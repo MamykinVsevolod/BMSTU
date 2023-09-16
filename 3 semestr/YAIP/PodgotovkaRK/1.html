@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Волкова Юлия Александровна, Мамыкин Всеволод Игоревич, ИУ6-35Б ssbbll</title>
+
+</head>
+
+<body>
+    <form action="#" method="#" id="form">
+        <div>
+            <label>
+                Число:
+                <input type="text" name="value">
+            </label>
+        </div>
+        <div>
+            <button type="submit" type="reset">Добавить в массив</button>
+        </div>
+
+    </form>
+
+    <script>
+        /*  function myfunc() {
+              var a = new Array();
+              a[0] = 1;
+              a[1] = 2;
+              a[2] = -3;
+              a[3] = 4;
+              a[4] = -2;
+              a[5] = 1;
+              var sum = 0;
+              var index = 0;
+              var flag = false;
+              for (var i = 0; i < 6; i++) {
+                  if (a[i] < 0) sum += a[i];
+                  if (a[i] % 2 == 1 && !flag) {
+                      index = i;
+                      flag = true;
+                  }
+              }
+              a[index] = sum;
+              document.write(a);
+          }*/
+        var array = new Array(); var i = 0;
+        function getFormValue(event) {
+            event.preventDefault();
+            const value = form.querySelector('[name="value"]'); //получаем поле plan
+            console.log(value.value);
+            document.getElementById('form').reset();
+            array[i] = value.value;
+            i += 1;
+            console.log(array);
+        }
+        const form = document.getElementById('form');
+        form.addEventListener('submit', getFormValue);
+    </script>
+    </script>
+</body>
+
+</html>
