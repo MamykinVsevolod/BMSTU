@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .number {
+            display: table-row;
+            width: 50%;
+        }
+    </style>
     <title>Волкова Юлия Александровна, Мамыкин Всеволод Игоревич, ИУ6-35Б ssbbll</title>
-
 </head>
 
 <body>
@@ -13,15 +18,14 @@
         <div>
             <label>
                 Число:
-                <input type="text" name="value">
+                <input type="text" pattern="^-?[0-9]\d*(\.\d+)?$" name="value">
             </label>
         </div>
         <div>
-            <button type="submit" type="reset">Добавить в массив</button>
+            <button type="submit">Добавить в массив</button>
         </div>
-
     </form>
-
+    <button onclick="getFormValue1()"> Решить </button>
     <script>
         /*  function myfunc() {
               var a = new Array();
@@ -49,10 +53,50 @@
             event.preventDefault();
             const value = form.querySelector('[name="value"]'); //получаем поле plan
             console.log(value.value);
-            document.getElementById('form').reset();
-            array[i] = value.value;
+            array[i] = Number(value.value);
             i += 1;
+            document.getElementById('form').reset();
             console.log(array);
+            let table = document.createElement('table');
+            document.body.append(table);
+            let rowHeader = table.insertRow();
+            let cell = rowHeader.insertCell();
+            cell.innerText = array[i - 1];
+        }
+
+        function getFormValue1() {
+            var flag = false;
+            var sum = 0; var j = 0; var index = 0;
+            for (j; j < i; ++j) {
+                if (array[j] < 0) {
+                    sum += array[j];
+                }
+                if (!flag && array[j] % 2 != 0) {
+                    index = j;
+                    flag = true;
+                }
+            }
+            if (flag) {
+                array[index] = sum;
+                let table = document.createElement('table');
+                document.body.append(table);
+                let rowHeader = table.insertRow();
+                let cell = rowHeader.insertCell();
+                cell.innerText = "Ответ: ";
+                for (let number in array) {
+                    let cell = rowHeader.insertCell();
+                    cell.innerText = array[number];
+                }
+            }
+            else {
+                let table = document.createElement('table');
+                document.body.append(table);
+                let rowHeader = table.insertRow();
+                let cell = rowHeader.insertCell();
+                cell.innerText = "Не найдены нечетные элементы или отрицательные";
+            }
+            array.length = 0;
+            i = 0;
         }
         const form = document.getElementById('form');
         form.addEventListener('submit', getFormValue);
