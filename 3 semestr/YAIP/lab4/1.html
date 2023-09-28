@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная 4</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        .my-primary {
+            background-color: cadetblue;
+            color: white;
+        }
+
+        footer {
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .styleforbutton1 {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stylemargintop {
+            margin-top: 10px;
+        }
+
+        .styletextalign {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<header>
+    <nav class="navbar my-primary">
+        <a class="navbar-brand">
+            <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="logo">
+            McDonald's™️
+        </a>
+    </nav>
+</header>
+<main class="container  stylemargintop" role="main">
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-5">
+            <form id="myForm">
+                <div class="form-row">
+                    <div class="col-md-5 mb-3">
+                        <label> Наименование товара </label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="col-md-5 mb-3">
+                        <label> Стоимость </label>
+                        <input type="text" class="form-control" pattern="^-?[0-9]\d*(\.\d+)?$" id="price" required>
+                    </div>
+                    <div class="col-md-5 mb-3 styleforbutton1">
+                        <button class="btn btn-primary" onclick="addElement()" type="submit">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-5">
+            <table class="table table-bordered styletextalign" id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Товар</th>
+                        <th scope="col">Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 styletextalign">
+            <p> Чтобы добавить товар в корзину, нажмите на название товара в таблице выше. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 styletextalign">
+            <p> Чтобы удалить товар из корзины, нажмите на название товара в таблице ниже. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+            <table class="table table-bordered styletextalign" id="myTable2">
+                <thead>
+                    <tr>
+                        <th scope="col">Товар</th>
+                        <th scope="col">Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+    <script>
+        var summ = 0;
+        var basket = document.getElementById("myTable2");
+        var row = basket.insertRow();
+        var cell = row.insertCell();
+        var totalText = document.createTextNode("Итого: " + summ.toString());
+        cell.appendChild(totalText);
+        cell.colSpan = 2;
+        function mouseDown2(element, newRow) {
+            newRow.deleteCell(0);
+            newRow.deleteCell(0);
+            totalText = document.createTextNode("Итого: " + summ.toString());
+            row.deleteCell(0);
+            cell = row.insertCell();
+            cell.appendChild(totalText);
+            cell.colSpan = 2;
+        }
+        function mouseDown(element, name, price) {
+            element.style.backgroundColor = "yellow";
+            var myTable2 = document.getElementById("myTable2");
+            var newRow = myTable2.insertRow(1);
+            var newCell = newRow.insertCell();
+            var newText = document.createTextNode(name);
+            newCell.appendChild(newText);
+            var newText2 = document.createTextNode(price);
+            var newCell2 = newRow.insertCell();
+            newCell2.appendChild(newText2);
+            summ += Number(price);
+            totalText = document.createTextNode("Итого: " + summ.toString());
+            row.deleteCell(0);
+            cell = row.insertCell();
+            cell.appendChild(totalText);
+            cell.colSpan = 2;
+            newCell.onmousedown = function () {
+                summ -= Number(price);
+                mouseDown2(this, newRow);
+            };
+        }
+        function mouseUp(element) {
+            element.style.backgroundColor = "white";
+        }
+        function addElement() {
+            var myTable = document.getElementById("myTable");
+            const name = document.getElementById("name").value;
+            const price = document.getElementById("price").value;
+            if (name != "" && price != "") {
+                var newRow = myTable.insertRow();
+                var newCell = newRow.insertCell();
+                var newText = document.createTextNode(name);
+                newCell.appendChild(newText);
+                var newText2 = document.createTextNode(price);
+                var newCell2 = newRow.insertCell();
+                newCell2.appendChild(newText2);
+                newCell.onmousedown = function () {
+                    mouseDown(this, name, price);
+                };
+                newCell.onmouseup = function () {
+                    mouseUp(this);
+                };
+                console.log("yes");
+                document.getElementById("myForm").reset();
+            }
+        }
+    </script>
+</main>
+<footer class="my-primary">
+    <div class="container">
+        <p class="footer-text"> ©️by Mamykin™️ </p>
+    </div>
+</footer>
+
+</html>
