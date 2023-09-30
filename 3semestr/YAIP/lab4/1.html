@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-md-5 mb-3">
                         <label> Стоимость </label>
-                        <input type="text" class="form-control" pattern="^-?[0-9]\d*(\.\d+)?$" id="price" required>
+                        <input type="text" class="form-control" pattern="^[ 0-9]+$" id="price" required>
                     </div>
                     <div class="col-md-5 mb-3 styleforbutton1">
                         <button class="btn btn-primary" onclick="addElement()" type="submit">Добавить</button>
@@ -157,7 +157,7 @@
             var myTable = document.getElementById("myTable");
             const name = document.getElementById("name").value;
             const price = document.getElementById("price").value;
-            if (name != "" && price != "") {
+            if (name != "" && price != "" && price[0] != '-') {
                 var newRow = myTable.insertRow();
                 var newCell = newRow.insertCell();
                 var newText = document.createTextNode(name);

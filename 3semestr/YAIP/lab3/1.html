@@ -41,14 +41,17 @@
                 while (cur != null) {
                     if (cur.nodeType === 1) {
                         var tmp_str = '';
+                        var tmp_str2 = '';
                         for (let i = 0; i < depth; ++i) {
                             tmp_str += '&nbsp';
                             tmp_str += '&nbsp';
                             tmp_str += '&nbsp';
+                            tmp_str2 += '   ';
                         }
                         elements.push(tmp_str + '&lt' + cur.tagName.toLowerCase() + '&gt' + '<br \/>');
                         counter += 1;
-                        console.log(elements);
+                        //console.log(elements);
+                        console.log(tmp_str2 + '<' + cur.tagName.toLowerCase() + '>' + '<br \/>');
                         obhod(cur, depth + 1);
                         /*if (cur.children.length > 0) {
                             elements.push(tmp_str + '&lt/' + cur.tagName.toLowerCase() + '&gt' + '<br \/>');
