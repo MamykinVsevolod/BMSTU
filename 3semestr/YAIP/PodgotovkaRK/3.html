@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        .number {
+            display: table-row;
+            width: 50%;
+        }
+
+        .stylemargintop {
+            margin-top: 10px;
+        }
+
+        .styletextalign {
+            text-align: center;
+        }
+
+        p {
+            font-size: 10px;
+        }
+    </style>
+    <title>Мамыкин Всеволод Игоревич ИУ6-35Б ssbbll</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+</head>
+
+<main class="container  stylemargintop" role="main">
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+        <div class="col-4">
+            <form id="myForm">
+                <div class="form-group">
+                    <label>Числа: </label>
+                    <input autocomplete="off" type="text" class="form-control" pattern="^([0-9]+[\s]{0,1})+" id="array"
+                        required>
+                    <p>Формат ввода: числа вводятся через один пробел, без запятых и иных символов.</p>
+                    <button class="btn btn-primary stylemargintop" id="myButton" type="submit">Добавить</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <table class="table table-bordered styletextalign" id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Значения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+
+        </div>
+        <div class="col-4">
+            <table class="table table-bordered styletextalign" id="myTable2">
+                <thead>
+                    <tr>
+                        <th scope="col">Ответ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+
+        </div>
+    </div>
+    <script>
+        function getFormValue(event) {
+            event.preventDefault();
+            var line = document.getElementById("array").value;
+            if (line != "") {
+                line = line.split(' ').map(Number);
+                console.log(line);
+                var myTable = document.getElementById("myTable");
+                let rowCount = myTable.rows.length;
+                for (let i = 1; i < rowCount; i++) {
+                    myTable.deleteRow(1);
+                }
+                for (let i = 0; i < line.length; ++i) {
+                    let newRow = myTable.insertRow();
+                    let newCell = newRow.insertCell();
+                    let newText = document.createTextNode(line[i].toString());
+                    newCell.appendChild(newText);
+                }
+                var myTable2 = document.getElementById("myTable2");
+                let rowCount2 = myTable2.rows.length;
+                for (let i = 1; i < rowCount2; i++) {
+                    myTable2.deleteRow(1);
+                }
+                let newRow = myTable2.insertRow();
+                let newCell = newRow.insertCell();
+                let newText = document.createTextNode(line.join(" "));
+                newCell.appendChild(newText);
+                document.getElementById("myForm").reset();
+            }
+        }
+        const form = document.getElementById("myForm");
+        form.addEventListener("submit", getFormValue);
+    </script>
+</main>
+
+</html>
