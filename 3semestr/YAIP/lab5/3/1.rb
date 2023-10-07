@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
 require_relative 'functions'
+
 my_string = gets.chop
+
 my_array = my_string.split
-print my_string
+
+puts 'Исходная строка: ' + my_string
+
 my_array[-1] = my_array[-1].delete_suffix('.')
-print my_array
+
+puts 'Полученная строка: ' + permutations(my_array)
