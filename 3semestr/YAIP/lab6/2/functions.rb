@@ -8,11 +8,9 @@ end
 def get_value(a, b, n)
   h = ((b - a) * 1.0 / n)
   res = 0
-  i = 1
-  while i <= n
+  1.upto(n) do |i|
     x = a + h * i
     res += F(x)
-    i += 1
     $number_of_iteration += 1
   end
   res *= h
