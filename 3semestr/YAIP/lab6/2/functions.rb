@@ -21,7 +21,7 @@ def integral(a, b, eps)
   cur = get_value(a, b, 2)
   prev = -10_000
   n = (2..20).map { |i| 2**i }
-  n.each do |i|
+  (2..20).map { |i| 2**i }.each do |i|
     $number_of_iteration = 0
     prev = cur
     cur = get_value(a, b, i)
