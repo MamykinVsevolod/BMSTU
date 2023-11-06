@@ -118,6 +118,9 @@
             event.preventDefault();
             var line = document.getElementById("array").value;
             if (line != "") {
+                //console.log(line + "5");
+                if (line[line.length - 1] == " ") line = line.slice(0, line.length - 1);
+                // добавленная строка
                 line = line.split(' ').map(Number);
                 console.log(line);
                 var myTable = document.getElementById("myTable");
