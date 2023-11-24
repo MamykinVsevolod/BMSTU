@@ -1,0 +1,43 @@
+<body>
+  <% if flash[:alert].present? %>
+    <script>
+        alert("<%= flash.now[:alert] %>");
+    </script>
+  <% end %>
+  <main style="margin: 0; padding: 0;">
+    <div class="container">
+      <div class="row">
+        <h3>Мамыкин Всеволод ИУ6-35Б</h3>
+      </div>
+      <div class="row">
+        <h5> Вариант 23: Дан массив чисел arr_n. Определить сумму
+          элементов массива, кратных 3, и поместить ее на
+          место элемента с индексом k, где k введенное
+          значение.</h5>
+      </div>
+      <div class="row" >
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+          <form action="/rk2/view" method="get" accept-charset="UTF-8">
+            <div class="mb-3">
+              <label for="array" class="form-label">Введите массив: </label>
+              <input type="text" class="form-control" id="array" name="array" pattern="^(-?[0-9]+[\s]{0,1})+" value="1 3 6 -20" required>
+              <p style="font-size: 10px">Формат ввода: целые числа вводятся через один пробел, без запятых и иных символов. <br />
+                Начинать ввод с цифры, не с пробела.</p>
+            </div>
+            <div class="mb-3">
+              <label for="k" class="form-label">Введите индекс k (>=0):</label>
+              <input type="text" class="form-control" id="k" name="k" pattern="^[0-9]+" value="0" required>
+              <p style="font-size: 10px">Формат ввода: неотрицательное число.</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Решить!</button>
+          </form>
+        </div>
+        <div class="col-3">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
