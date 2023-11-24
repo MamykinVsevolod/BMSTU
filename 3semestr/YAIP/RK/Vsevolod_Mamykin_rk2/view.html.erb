@@ -1,0 +1,63 @@
+<body >
+  <main style="margin: 0; padding: 0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+          <h3 style="text-align: center;">Решение: </h3>
+        </div>
+        <div class="col-3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-6">
+          <table class="table table-bordered" style="text-align: center;">
+            <tbody>
+            <tr>
+              <th scope="row">Массив: </th>
+              <td> <%= @array %></td>
+            </tr>
+            <tr>
+              <th scope="row"> Индекс k: </th>
+              <td> <%= @index %> </td>
+            </tr>
+            <% if @warning_string == '>' %> <!-- дополнительная проверка -->
+            <tr>
+              <th scope="row">Результат: </th>
+              <td> Элемент с индексом k не существует! </td>
+            </tr>
+            <% else %>
+                <tr>
+                  <th scope="row"> Сумма элементов, кратных 3: </th>
+                  <td> <%= @sum %> </td>
+                </tr>
+                <tr>
+                  <th scope="row"> Результат: </th>
+                  <td> <%= @result%> </td>
+                </tr>
+              <% end %>
+              </tbody>
+          </table>
+        </div>
+        <div class="col-3">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-6" style="display: flex; justify-content: center;">
+          <form action="/rk2/input" method="get" accept-charset="UTF-8">
+            <button class="btn btn-primary">Вернуться назад</button>
+          </form>
+        </div>
+        <div class="col-3">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+
