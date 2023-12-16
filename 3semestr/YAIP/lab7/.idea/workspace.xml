@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a2a866f3-4508-4e7c-9f49-6d0a0525167e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../lab9/sequences/app/helpers/sequences_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/.idea/lab9.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab9/.idea/lab9.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/sequences/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../lab9/sequences/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/sequences/app/helpers/twins_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/sequences/spec/rails_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/sequences/spec/spec_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/sequences/spec/test_twins_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab9/sequences/test/controllers/sequences_controller_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/../lab9/sequences/test/controllers/sequences_controller_test.rb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2ZFUeyj714Zgb4Bl9obX1QU7qcn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Documents/GitHub/BMSTU/3semestr/YAIP/lab7",
+    "ruby.rails.projectView.checked": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringUtil" SPRING_PRE_LOADER_OPTION="true" RAKE_SPRING_PRE_LOADER_OPTION="true" RAILS_SPRING_PRE_LOADER_OPTION="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2a866f3-4508-4e7c-9f49-6d0a0525167e" name="Changes" comment="" />
+      <created>1702017420277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702017420277</updated>
+      <workItem from="1702017421251" duration="38000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/lab7@tests.rcov" NAME="tests Coverage Results" MODIFIED="1702017437181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="lab7" />
+  </component>
+</project>

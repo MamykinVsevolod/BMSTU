@@ -5,23 +5,12 @@ class SequencesControllerTest < ActionDispatch::IntegrationTest
     get sequences_calculate_url
     assert_response :success
   end
-
-  test 'should get same hash for n = 3' do
-    get sequences_calculate_url, params: { n: 3 }
-    target = { 3 => 5 }
-
-    assert_equal assigns[:result][0], target
+  test 'should get sequence' do
+    get sequences_calculate_url, params: { v1: '10', v2: '1 2 3 4 9 16 3 2 4 10' }
+    assert_equal assigns[:result], [['1', '4 9 16', '4'], '4 9 16', '3', '1 2 3 4 9 16 3 2 4 10']
   end
-
-  test 'should get same hash for n = 10' do
-    get sequences_calculate_url, params: { n: 10 }
-    target = { 11 => 13, 17 => 19 }
-
-    assert_equal assigns[:result][0], target
-  end
-
-  test 'should get Unknown! for incorrect params' do
-    get sequences_calculate_url
-    assert_equal assigns[:result], [{}, 'Unknown!']
+  test 'should get sequence - 2' do
+    get sequences_calculate_url, params: { v1: '3', v2: '1 4 4' }
+    assert_equal assigns[:result], [['1 4 4'], '1 4 4', '3', '1 4 4']
   end
 end
