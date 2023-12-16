@@ -1,15 +1,6 @@
-<h1>TwinsProxy#input</h1>
+<h1>SequencesProxy#input</h1>
 
 <div>
-  <div>
-    <input type="radio" id="server_radio" name="selector" value="1" />
-    <label for="server_radio">Серверный обработчик</label>
-
-    <input type="radio" id="client_radio" name="selector" value="2" />
-    <label for="client_radio">Клиентский обработчик</label>
-  </div>
-
-  <br>
 
   <form action="" method="get" id="calc_form" accept-charset="UTF-8" data-remote="false">
     <label for="n"> Последовательность: </label>
@@ -17,6 +8,12 @@
     <input id="xslt" name="commit" type="submit" value="XML+XSLT" />
     <input id="xml" name="commit" type="submit" value="XML" />
   </form>
+  <div>
+    <input type="radio" id="server_radio" name="selector" value="1" />
+    <label for="server_radio">Серверный обработчик</label>
 
+    <input type="radio" id="client_radio" name="selector" value="2" />
+    <label for="client_radio">Клиентский обработчик</label>
+  </div>
   <div id="result"></div>
 </div>

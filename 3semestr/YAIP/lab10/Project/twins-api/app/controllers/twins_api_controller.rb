@@ -31,17 +31,17 @@ class TwinsApiController < ApplicationController
     @result = [all_subsequences, longest_subsequence.join(' '), subsequence_count.to_s, sequence&.join(' ')]
     if @result[2] != '0'
       @table +=
-        "<cd><id>Введенная последовательность:<id></cd><cd><id>#{@result[3]}<id></cd><cd><id>Подпоследовательности:<id></cd>"
+        "<cd><id>Введенная последовательность:</id></cd><cd><id>#{@result[3]}</id></cd><cd><id>Подпоследовательности:</id></cd>"
 
       @result[0].each do |res|
-        @table += "<cd><id>#{res}<id></cd>"
+        @table += "<cd><id>#{res}</id></cd>"
       end
 
       @table +=
-        "<cd><id>Самая длинная подпоследовательность:<id></cd><cd><id>#{@result[1]}<id></cd><cd><id>Ее длина:<id></cd><cd><id>#{@result[2]}<id></cd>"
+        "<cd><id>Самая длинная подпоследовательность:</id></cd><cd><id>#{@result[1]}</id></cd><cd><id>Ее длина:</id></cd><cd><id>#{@result[2]}</id></cd>"
     else
       @table +=
-        "<cd><id>Введенная последовательность:<id></cd><cd><id>#{@result[3]}<id></cd><cd><id>Подполседовательностей квадратов натуральных чисел нет<id></cd>"
+        "<cd><id>Введенная последовательность:</id></cd><cd><id>#{@result[3]}</id></cd><cd><id>Подполседовательностей квадратов натуральных чисел нет</id></cd>"
     end
     @table += '</catalog>' # Конец таблицы
     @tmp = @result.clone
