@@ -1,0 +1,14 @@
+<h1>Twins#input</h1>
+
+<div>
+  <p>
+    <a href="<%= url_for(only_path: false) + '.html.erb' %>">Мы находимся по
+      адресу: <%= url_for(only_path: false) + '.html.erb' %></a>
+  </p>
+
+  <form action="/twins/view" method="get" accept-charset="UTF-8">
+    <label for="n"> Последовательность: </label>
+    <input type="text" id="n" name="n"  pattern="^([0-9]+[\s]{0,1})+"  value="1 2 3 4 9 16 3 2 4 10" required/>
+    <button>Ввести</button>
+  </form>
+</div>

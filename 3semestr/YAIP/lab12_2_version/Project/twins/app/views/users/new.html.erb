@@ -1,0 +1,26 @@
+<% provide(:title, 'Sign up') %>
+
+
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <div class="span6 offset3">
+      <h1>Регистрация</h1>
+      <%= form_for(@user) do |f| %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control", required: true %>
+
+        <%= f.label 'Пароль' %>
+        <%= f.password_field :password, class: "form-control", required: true %>
+
+        <%= f.label 'Подтверждение пароля', 'Confirmation' %>
+        <%= f.password_field :password_confirmation, minlength: 4, class: "form-control", suggested: "new-password", required: true %>
+
+        <%= f.submit "Зарегестрироваться", class: "btn btn-large btn-primary mt-4" %>
+        <%= link_to 'Вход', signin_path%>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-4"></div>
+</div>
