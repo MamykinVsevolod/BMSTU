@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <table>
     <database></database>
-    <name>results</name>
-    <ddl><![CDATA[CREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "input" integer, "result" json, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);]]></ddl>
+    <name>users</name>
+    <ddl><![CDATA[CREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar DEFAULT NULL, "remember_token" varchar DEFAULT NULL);]]></ddl>
     <columns>
         <column>
             <name>id</name>
@@ -19,12 +19,14 @@
             </constraints>
         </column>
         <column>
-            <name>input</name>
-            <type>integer</type>
-        </column>
-        <column>
-            <name>result</name>
-            <type>json</type>
+            <name>email</name>
+            <type>varchar</type>
+            <constraints>
+                <constraint>
+                    <type>DEFAULT</type>
+                    <definition>DEFAULT NULL</definition>
+                </constraint>
+            </constraints>
         </column>
         <column>
             <name>created_at</name>
@@ -46,28 +48,43 @@
                 </constraint>
             </constraints>
         </column>
+        <column>
+            <name>password_digest</name>
+            <type>varchar</type>
+            <constraints>
+                <constraint>
+                    <type>DEFAULT</type>
+                    <definition>DEFAULT NULL</definition>
+                </constraint>
+            </constraints>
+        </column>
+        <column>
+            <name>remember_token</name>
+            <type>varchar</type>
+            <constraints>
+                <constraint>
+                    <type>DEFAULT</type>
+                    <definition>DEFAULT NULL</definition>
+                </constraint>
+            </constraints>
+        </column>
     </columns>
     <rows>
         <row>
-            <value column="0">1</value>
-            <value column="1">10</value>
-            <value column="2">&quot;{\&quot;11\&quot;:13,\&quot;17\&quot;:19}&quot;</value>
-            <value column="3">2023-11-08 16:33:04.789709</value>
-            <value column="4">2023-11-08 16:33:04.789709</value>
+            <value column="0">11</value>
+            <value column="1">or4cular@yandex.ru</value>
+            <value column="2">2023-12-18 11:03:57.351782</value>
+            <value column="3">2023-12-18 17:50:27.376157</value>
+            <value column="4">$2a$12$HkDyqTzM1o1kKd.ST0ycBeYENv47yajjXXeMMXE.R4JXJIt6GUFyq</value>
+            <value column="5">89970edc932f1961f207399575ddbf3ac4a5600d</value>
         </row>
         <row>
-            <value column="0">2</value>
-            <value column="1">11</value>
-            <value column="2">&quot;{\&quot;11\&quot;:13,\&quot;17\&quot;:19}&quot;</value>
-            <value column="3">2023-11-08 16:33:07.187956</value>
-            <value column="4">2023-11-08 16:33:07.187956</value>
-        </row>
-        <row>
-            <value column="0">3</value>
-            <value column="1">15</value>
-            <value column="2">&quot;{\&quot;17\&quot;:19}&quot;</value>
-            <value column="3">2023-11-08 16:33:09.666411</value>
-            <value column="4">2023-11-08 16:33:09.666411</value>
+            <value column="0">12</value>
+            <value column="1">or4cular1@yandex.ru</value>
+            <value column="2">2023-12-18 17:52:04.763225</value>
+            <value column="3">2023-12-19 06:41:36.807160</value>
+            <value column="4">$2a$12$AUti4NUbTtYcrOHHdAaLne3X.FeTxSsqTQYHJf4B0FddxHmjtAw3u</value>
+            <value column="5">02a713e4949b0e7ead3cb586a820c3603d974e48</value>
         </row>
     </rows>
 </table>

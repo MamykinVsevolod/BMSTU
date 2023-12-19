@@ -18,7 +18,7 @@
         <%= f.password_field :password_confirmation, minlength: 4, class: "form-control", suggested: "new-password", required: true %>
 
         <%= f.submit "Зарегестрироваться", class: "btn btn-large btn-primary mt-4" %>
-        <%= link_to 'Вход', signin_path%>
+        <p>Уже есть аккаунт? <%= link_to 'Вход', signin_path%></p>
       <% end %>
     </div>
   </div>

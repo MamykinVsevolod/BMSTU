@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class TwinsController < ApplicationController
+class SequencesController < ApplicationController
   def input
     unless signed_in?
       redirect_to signin_path

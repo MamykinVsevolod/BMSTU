@@ -2,7 +2,7 @@
 <table>
     <database></database>
     <name>results</name>
-    <ddl><![CDATA[CREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "input" integer, "result" json, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);]]></ddl>
+    <ddl><![CDATA[CREATE TABLE "results" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "input" varchar, "result" json, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);]]></ddl>
     <columns>
         <column>
             <name>id</name>
@@ -20,7 +20,7 @@
         </column>
         <column>
             <name>input</name>
-            <type>integer</type>
+            <type>varchar</type>
         </column>
         <column>
             <name>result</name>
@@ -50,24 +50,66 @@
     <rows>
         <row>
             <value column="0">1</value>
-            <value column="1">10</value>
-            <value column="2">&quot;{\&quot;11\&quot;:13,\&quot;17\&quot;:19}&quot;</value>
-            <value column="3">2023-11-08 16:33:04.789709</value>
-            <value column="4">2023-11-08 16:33:04.789709</value>
+            <value column="1">[1, 2, 3, 4, 9, 16, 3, 2, 4, 10]</value>
+            <value column="2">&quot;[[\&quot;1\&quot;,\&quot;4 9 16\&quot;,\&quot;4\&quot;],\&quot;4 9 16\&quot;,\&quot;3\&quot;,\&quot;1 2 3 4 9 16 3 2 4 10\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:01:05.903438</value>
+            <value column="4">2023-12-17 16:01:05.903438</value>
         </row>
         <row>
             <value column="0">2</value>
-            <value column="1">11</value>
-            <value column="2">&quot;{\&quot;11\&quot;:13,\&quot;17\&quot;:19}&quot;</value>
-            <value column="3">2023-11-08 16:33:07.187956</value>
-            <value column="4">2023-11-08 16:33:07.187956</value>
+            <value column="1">[1, 2, 3, 4, 9, 16, 3, 2, 4, 10, 1]</value>
+            <value column="2">&quot;[[\&quot;1\&quot;,\&quot;4 9 16\&quot;,\&quot;4\&quot;,\&quot;1\&quot;],\&quot;4 9 16\&quot;,\&quot;3\&quot;,\&quot;1 2 3 4 9 16 3 2 4 10 1\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:07:57.878209</value>
+            <value column="4">2023-12-17 16:07:57.878209</value>
         </row>
         <row>
             <value column="0">3</value>
-            <value column="1">15</value>
-            <value column="2">&quot;{\&quot;17\&quot;:19}&quot;</value>
-            <value column="3">2023-11-08 16:33:09.666411</value>
-            <value column="4">2023-11-08 16:33:09.666411</value>
+            <value column="1">[1]</value>
+            <value column="2">&quot;[[\&quot;1\&quot;],\&quot;1\&quot;,\&quot;1\&quot;,\&quot;1\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:14:17.630997</value>
+            <value column="4">2023-12-17 16:14:17.630997</value>
+        </row>
+        <row>
+            <value column="0">4</value>
+            <value column="1">[1, 2]</value>
+            <value column="2">&quot;[[\&quot;1\&quot;],\&quot;1\&quot;,\&quot;1\&quot;,\&quot;1 2\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:21:26.305745</value>
+            <value column="4">2023-12-17 16:21:26.305745</value>
+        </row>
+        <row>
+            <value column="0">5</value>
+            <value column="1">1 2 3 4 9 16 3 2 4 10</value>
+            <value column="2">&quot;[[\&quot;1\&quot;,\&quot;4 9 16\&quot;,\&quot;4\&quot;],\&quot;4 9 16\&quot;,\&quot;3\&quot;,\&quot;1 2 3 4 9 16 3 2 4 10\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:24:37.869351</value>
+            <value column="4">2023-12-17 16:24:37.869351</value>
+        </row>
+        <row>
+            <value column="0">6</value>
+            <value column="1">1 2 3 4 9</value>
+            <value column="2">&quot;[[\&quot;1\&quot;,\&quot;4 9\&quot;],\&quot;4 9\&quot;,\&quot;2\&quot;,\&quot;1 2 3 4 9\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:25:39.038207</value>
+            <value column="4">2023-12-17 16:25:39.038207</value>
+        </row>
+        <row>
+            <value column="0">7</value>
+            <value column="1">1</value>
+            <value column="2">&quot;[[\&quot;1\&quot;],\&quot;1\&quot;,\&quot;1\&quot;,\&quot;1\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:26:47.563338</value>
+            <value column="4">2023-12-17 16:26:47.563338</value>
+        </row>
+        <row>
+            <value column="0">8</value>
+            <value column="1">1 2 3 4 9 16 3 2 4 10 11</value>
+            <value column="2">&quot;[[\&quot;1\&quot;,\&quot;4 9 16\&quot;,\&quot;4\&quot;],\&quot;4 9 16\&quot;,\&quot;3\&quot;,\&quot;1 2 3 4 9 16 3 2 4 10 11\&quot;]&quot;</value>
+            <value column="3">2023-12-17 16:28:14.852931</value>
+            <value column="4">2023-12-17 16:28:14.852931</value>
+        </row>
+        <row>
+            <value column="0">9</value>
+            <value column="1" null="true"/>
+            <value column="2">&quot;[[],\&quot;\&quot;,\&quot;0\&quot;,null]&quot;</value>
+            <value column="3">2023-12-17 17:56:07.238465</value>
+            <value column="4">2023-12-17 17:56:07.238465</value>
         </row>
     </rows>
 </table>

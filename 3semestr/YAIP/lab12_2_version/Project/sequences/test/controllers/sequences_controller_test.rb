@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TwinsControllerTest < ActionDispatch::IntegrationTest
+class SequencesControllerTest < ActionDispatch::IntegrationTest
   test 'should get input' do
     get input_url
     assert_response 302
