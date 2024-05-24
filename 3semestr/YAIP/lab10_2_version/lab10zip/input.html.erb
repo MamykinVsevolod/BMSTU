@@ -1,0 +1,19 @@
+<h1>SequencesProxy#input</h1>
+
+<div>
+
+  <form action="" method="get" id="calc_form" accept-charset="UTF-8" data-remote="false">
+    <label for="n"> Последовательность: </label>
+    <input type="text" id="n" name="n"  pattern="^([0-9]+[\s]{0,1})+"  value="1 2 3 4 9 16 3 2 4 10" required/>
+    <input id="xslt" name="commit" type="submit" value="XML+XSLT" />
+    <input id="xml" name="commit" type="submit" value="XML" />
+  </form>
+  <div>
+    <input type="radio" id="server_radio" name="selector" value="1" checked/>
+    <label for="server_radio">Серверный обработчик</label>
+
+    <input type="radio" id="client_radio" name="selector" value="2" />
+    <label for="client_radio">Клиентский обработчик</label>
+  </div>
+  <div id="result"></div>
+</div>

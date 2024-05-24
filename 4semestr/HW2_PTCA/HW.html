@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ ПТЦА</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 10% auto 0;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+            background-size: cover;
+        }
+
+        .form-container {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .my_class {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+    </header>
+    <main class="container center" role="main">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="my_class form-container">
+                    <p>Привет! Это игра "Угадай число". Твой соперник - компьютер, который загадывает число от 1 до 3,
+                        ты
+                        называешь
+                        число и получаешь ответ "да", "много", "мало". За каждый ответ начисляется очко. Игра
+                        продолжается до тех пор, пока число не будет угадано. Удачи!</p>
+                    <form id="myForm">
+                        <div class="form-group">
+                            <label for="numberInput">Введите число (от 1 до 3, один символ):</label>
+                            <input type="number" class="form-control" id="numberInput" name="numberInput" min="1"
+                                max="3" pattern="[1-3]" title="Пожалуйста, введите число от 1 до 3" required>
+                            <small id="numberInputHelp" class="form-text text-muted">Другие символы не
+                                допускаются</small>
+                        </div>
+                        <button type="submit" id="submitButton" class="btn btn-primary" disabled>Дать ответ</button>
+                        <p>История ввода чисел:</p>
+                        <p id="resultMessage">-</p>
+                        <p id="resultMessage2"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="my-primary">
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let hidden_number = Math.floor(Math.random() * 3) + 1;
+            const usedNumbers = [];
+            let score = 1;
+            let flag = false;
+            console.log("Загаданное число: " + hidden_number);
+
+            document.getElementById('numberInput').addEventListener('input', function () {
+                if (this.value.length === 1) {
+                    document.getElementById('submitButton').removeAttribute('disabled');
+                } else {
+                    document.getElementById('submitButton').setAttribute('disabled', 'disabled');
+                }
+            });
+
+            document.getElementById('myForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const userNumber = parseInt(document.getElementById('numberInput').value);
+                if (!usedNumbers.includes(userNumber)) {
+                    usedNumbers.push(userNumber);
+                    if (userNumber < hidden_number) {
+                        if (!flag) {
+                            document.getElementById('resultMessage').innerText = `Вы ввели число ${userNumber} - мало`;
+                            flag = true;
+                        } else {
+                            document.getElementById('resultMessage2').innerText = `Вы ввели число ${userNumber} - мало`;
+                        }
+                    }
+                    if (userNumber > hidden_number) {
+                        if (!flag) {
+                            document.getElementById('resultMessage').innerText = `Вы ввели число ${userNumber} - много`;
+                            flag = true;
+                        } else {
+                            document.getElementById('resultMessage2').innerText = `Вы ввели число ${userNumber} - много`;
+                        }
+                    }
+                    if (userNumber === hidden_number) {
+                        alert(`Игра окончена! Ваш счет: ${score}. Перезагрузите страницу для начала новой игры.`);
+                    }
+                    score += 1;
+                } else {
+                    alert('Это число уже было использовано. Пожалуйста, введите другое число.');
+                }
+                document.getElementById('numberInput').value = ''; // Очистить поле ввода
+            });
+        });
+    </script>
+
+</body>
+
+</html>

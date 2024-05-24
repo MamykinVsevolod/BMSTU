@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="span6 offset3">
+    <div class="row">
+      <div class="col-4">
+      </div>
+      <div class="col-4">
+        <h4 style="align-content: center; margin-left: auto; margin-right: auto;">Sequences#input</h4>
+        <form action="<%= view_path %>" method="get" accept-charset="UTF-8">
+          <div class="form-group">
+            <label for="n"> Последовательность: </label>
+            <input type="text" id="n" name="n"  pattern="^([0-9]+[\s]{0,1})+"  value="1 2 3 4 9 16 3 2 4 10" required/>
+          </div>
+
+          <button type="submit" class="btn btn-large btn-primary mt-4">Ввести</button>
+        </form>
+      </div>
+      <div class="col-4">
+      </div>
+    </div>
+  </div>
+</div>
